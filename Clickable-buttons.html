@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM project 1</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        }
+        html, body{
+            height: 100%;
+            width: 100%;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: cornflowerblue;
+        }
+        #card{
+            height: 500px;
+            width: 350px;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            
+        }
+        #card img{
+            background-size: cover;
+            height: 70%;
+            width: 100%;
+            border-radius: 10px;
+        }
+        #card h1{
+            font-size: 25px;
+            text-align: center;
+            font-weight: 700;
+        }
+        #card h5{
+            font-size: 20px;
+            color: red;
+            margin: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #btn-container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #card button{
+            background-color: cadetblue;
+            color: #fff;
+            font-weight: 700;
+            padding: 12px 20px;
+            border-radius: 5px;
+            border: none;
+            margin: 5px;
+        }
+        /* #card #remove{
+            background-color: #dadadd;
+            color: #111;
+        } */
+    </style>
+</head>
+<body>
+    <div id="card">
+        <img src="https://pixel.nymag.com/imgs/daily/vulture/2018/02/01/01-tom-cruise.w700.h700.jpg" alt="tarun">
+        <h1>Tom cruise</h1>
+        <h5>Stranger</h5>
+        <div id="btn-container">
+            <!-- <button id="remove">remove</button> -->
+            <button id="Add">Add Friend</button>
+        </div>
+        <h2 style="margin-top: 20px; font-size: 20px;">click on add Friend button </h2>
+    </div>
+</body>
+<script>
+    var istatus = document.querySelector("h5");
+    var addfreind = document.querySelector("#Add");
+    var situation = 0;
+    addfreind.addEventListener("click", function(){
+        if(situation==0){
+        istatus.innerHTML = "Friends";
+        istatus.style.color = "green";
+        addfreind.innerHTML = "Remove";
+        addfreind.style.backgroundColor = "#dadadd";
+        addfreind.style.color = "#111"
+        situation = 1;
+        }
+        else{
+        istatus.innerHTML = "Stranger";
+        istatus.style.color = "red";
+        addfreind.innerHTML = "Add Friend";
+        addfreind.style.backgroundColor = "cadetblue";
+        addfreind.style.color = "#fff"
+        situation = 0;
+        }
+    })
+</script>
+</html>

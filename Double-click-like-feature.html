@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+    <title>DOM project 2</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        html, body{
+            height: 100%;
+            width: 100%;
+        }
+        body{
+            background: linear-gradient(to right, red, blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container{
+            height: 400px;
+            width: 300px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 5px;
+        }
+        .container img{
+            height: 100%;
+            width: 100%;
+            /* background-size: cover; */
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .container i{
+            color: #fff;
+            font-size: 60px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 0.8;
+            transition: all ease-in 0.33s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://th.bing.com/th/id/OIP.pBO_Wqoo4OCEzNoGz1Vm8gAAAA?pid=ImgDet&rs=1" alt="tarun">
+        <i class="ri-heart-fill"></i>
+        <h1 style="font-size: 20px;">double click on image</h1>
+    </div>
+</body>
+<script>
+    var cont = document.querySelector(".container");
+    var heart = document.querySelector("i");
+    cont.addEventListener("dblclick",function(){
+        heart.style.transform = "translate(-50%, -50%) scale(1)";
+        setTimeout(function(){
+            heart.style.transform = "translate(-50%, -50%) scale(0)";
+        },1000);
+    })
+</script>
+</html>
